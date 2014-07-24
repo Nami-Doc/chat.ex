@@ -12,7 +12,7 @@ defmodule Chat do
   end
 
   def start_listen(port) do
-    tcp_opt = [:list, {:packet, 0}, {:active false}, {:reuseaddr, true}]
+    tcp_opt = [:list, {:packet, 0}, {:active, false}, {:reuseaddr, true}]
     {:ok, listen_sock} = :gen_tcp.listen(port, tcp_opt)
     listen(listen_sock)
   end

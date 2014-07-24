@@ -1,6 +1,6 @@
 defmodule Chat.Handler do
-  def handle(responder, msg) do
+  def handle(responder, _msg) do
   	# todo dispatch this :(
-  	responder <- {:ok, "message sent !"}
+  	send responder, {:ok, "message sent !"}
   end
 end
