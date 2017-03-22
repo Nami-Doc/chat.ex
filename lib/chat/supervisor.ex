@@ -1,5 +1,5 @@
 defmodule Chat.Supervisor do
-  use Supervisor.Behaviour
+  use Supervisor
 
   def start_link do
     :supervisor.start_link(__MODULE__, [])
@@ -7,7 +7,7 @@ defmodule Chat.Supervisor do
 
   def init([]) do
     children = [
-      worker(Chat, [])
+      worker(Chat, [[], [name: Chat]])
     ]
 
     supervise(children, strategy: :one_for_one)

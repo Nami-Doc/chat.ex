@@ -4,17 +4,15 @@ defmodule Chat.Mixfile do
   def project do
     [ app: :chat,
       version: "0.0.1",
-      elixir: "~> 0.14.1",
-      deps: deps ]
+      elixir: "~> 1.4.2",
+      deps: deps() ]
   end
 
-  # Configuration for the OTP application
   def application do
-    [mod: { Chat, [] }]
+    #[mod: { Chat.Supervisor, [] }]
+    []
   end
 
-  # Returns the list of dependencies in the format:
-  # { :foobar, "~> 0.1", git: "https://github.com/elixir-lang/foobar.git" }
   defp deps do
     []
   end
